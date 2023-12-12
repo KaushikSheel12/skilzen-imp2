@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth !important; 
+}
+
+body {
+  padding: 0;
+  margin-top: 0;
+}
+
+.slick-arrow {
+  width: 35px !important;
+  height: 35px !important;
+  z-index: 1321;
+  background-color: black !important;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 100%;
+  padding-top: 2px !important;
+}
+
+.slick-arrow slick-prev {
+  margin-left: 300px;
+}
+
+.slick-prev {
+  left: 54px !important;
+}
+
+.slick-next {
+  right: 52px !important;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 15px !important;
+  line-height: 20px;
+  position: absolute;
+  top: -43px !important;
+
+  width: 20px;
+  height: 20px;
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+}
+
+/* styles/globals.css or any other CSS file */
+
+/* Show the popup when hovering the trigger */
+.hover-trigger:hover + .popup {
+  display: flex;
+}
+
+/* Additional styles for the popup container */
+.popup {
+  top: 80px; /* Adjust this value as per your requirement */
+  z-index: 1;
+}
+
+/* Additional styles for the box */
+.box {
+  transition: transform 0.3s ease-in-out;
+}
+
+.body {
+  background-color: cornsilk;
+}
+
+.topbox {
+  transition: height 0.3s ease;
+}
+
+.bgdiv {
+  background: rgba(255, 255, 255, 0.19);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.2px);
+  -webkit-backdrop-filter: blur(6.2px);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.rotate {
+  animation-name: rotateAnimation;
+  animation-duration: 26s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(160deg);
+  }
+
+  to {
+  }
+}
+
+.border-dashed {
+  border-style: dashed;
+}
+
+.expand-card {
+  width: 400px;
+}
+
+.card {
+  width: 200px;
+}
+.go-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #feba88;
+  bottom: -90px;
+  transition: all 0.2s ease-in-out;
+}
+.go-btn:hover.go-btn::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #feba88;
+  bottom: 0px;
+}
+
+/* SlidingText.css */
+
+.slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-text {
+  white-space: nowrap;
+  animation: slide-right 30s linear infinite; /* Adjust duration and timing function as needed */
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Custom select container */
+.custom-select {
+  position: relative;
+  width: 100%;
+}
+
+/* Style the select element */
+.custom-select select {
+  appearance: none; /* Hide default arrow in some browsers */
+  -webkit-appearance: none; /* Hide default arrow in Safari */
+  -moz-appearance: none; /* Hide default arrow in Firefox */
+  width: 100%;
+  color: rgba(101, 101, 100, 0.86);
+  border: 1px solid #ccc;
+  background-color: white;
+  cursor: pointer;
+  font-size: 14px;
+  padding-left: 5px;
+}
+
+/* Style the custom arrow */
+.custom-select::after {
+  content: "\25BC"; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  width: 20px; /* Adjust the width */
+  height: 20px; /* Adjust the height */
+  font-size: 15px; /* Adjust the font size if needed */
+}
+
+@keyframes slowSkew {
+  0% {
+    transform: skewY(0deg);
+  }
+  100% {
+    transform: skewY(12deg);
+  }
+}
+
+.slow-skew {
+  animation: slowSkew 1s ease-in-out forwards;
+}
+
+.draw-animation line {
+  stroke-dasharray: 300; /* Length of dashes and gaps */
+  stroke-dashoffset: 300; /* Offset to hide the line initially */
+  animation: draw 2s linear forwards, dotted 3s linear forwards 2s;
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 10;
+  }
+}
+
+@keyframes dotted {
+  from {
+    stroke-dasharray: 300; /* Initial dash array */
+  }
+  to {
+    stroke-dasharray: 5; /* Final dash array (dotted) */
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.5s forwards;
+}
+
+.slideshow {
+  position: relative;
+  overflow: hidden;
+}
+
+.imgslide {
+  /* background: url(https://mono.co/_next/image?url=%2F_next%2Fstatic%2Fimage%2Fsrc%2Fassets%2Fimages%2Fbank-icons-collage.4a6f14c023e28fb8fefaaea228220462.png&w=750&q=75); */
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 300%;
+  animation: slideshow 10s linear infinite;
+}
+
+@keyframes slideshow {
+  0% {
+    left: 0;
+  }
+
+  100% {
+    left: -200%;
+  }
+}
+
+/* input box-range */
+
+input[type="range"] {
+  accent-color: rgb(111, 108, 105);
+  background: #fbf8f8 !important;
+}
+
+.para:before {
+  content: "\2022"; /* Unicode character for a bullet point */
+  margin-right: 8px; /* Add some space between the dot and the text */
+}
+
+body {
+  scroll-behavior: smooth;
+}
